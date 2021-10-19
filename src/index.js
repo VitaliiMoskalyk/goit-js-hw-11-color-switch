@@ -30,8 +30,6 @@ function changerColor(event) {
     if (event.target.dataset.action === 'stop') {
         clearInterval(intervalId);
         startBtnRef.addEventListener('click', changerColor);
-        
-    }
-    
+    } 
 }
 
