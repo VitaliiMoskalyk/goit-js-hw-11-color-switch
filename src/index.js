@@ -22,12 +22,14 @@ const randomIntegerFromInterval = (min, max) => {
 
 function changerColor(event) {
     
-    if (event.target.dataset.action === 'start') {
+  if (event.target.dataset.action === 'start') {
+    startBtnRef.disabled='true';
         intervalId=setInterval(()=>event.target.closest('body').style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)], 1000);
         startBtnRef.removeEventListener('click',changerColor);
     };
 
-    if (event.target.dataset.action === 'stop') {
+  if (event.target.dataset.action === 'stop') {
+    startBtnRef.disabled==='false';
         clearInterval(intervalId);
         startBtnRef.addEventListener('click', changerColor);
     } 
